@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Geometria Interativa</title>
+    
+    <!--folha de estilos-->
+    <link rel="stylesheet" href="styles/main.css"> 
+
+    <!--codigo javascript-->
+    <script src="scripts/script.js"></script> 
+</head>
+
+<body>
+    <!-- Imagem de capa, Título e Subtítulo -->
+    <header>
+        <div class="imagem-capa">
+            <img src="pablo gebra capa.png" alt="Imagem de capa do site">
+        </div>
+        <div class="titulo-subtitulo">
+            <h1>Pablo do Gebra</h1>
+            <h2>Explorando a Geometria de Forma Interativa com o GeoGebra </h2>
+        </div>
+    </header>
+
+    <!-- Botões Sobre Mim e Referências -->
+    <div class="botoes-superiores">
+        <button onclick="showAbout()">Sobre Mim</button>
+        <button onclick="showReferences()">Referências</button>
+    </div>
+
+    <!-- Barra de Navegação Horizontal -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('janela1')">Paralela de uma Reta</a></li>
+            <li><a href="#" onclick="showSection('janela2')">Triângulo Escaleno</a></li>
+            <li><a href="#" onclick="showSection('janela3')">Quadrado</a></li>
+        </ul>
+    </nav>
+    <div id="about" style="display:none;">
+        <h3>Sobre Mim</h3>
+        <p>Olá! Meu nome é Pablo Mateus Souza da Silva, tenho 25 anos e sou discente do curso de Licenciatura em
+            Expressão Gráfica na Universidade Federal de Pernambuco (UFPE). Criei este site com o objetivo de
+            compartilhar algumas construções geométricas utilizando o GeoGebra, disponibilizando botões interativos que
+            criam um passo a passo, tornando mais fácil visualizar as regras de condição de existência das figuras.</p>
+    </div>
+
+    <div id="references" style="display:none;">
+        <h3>Referências</h3>
+        <ul>
+            <li><a href="https://matematicaufsj.wordpress.com/wp-content/uploads/2012/12/caderno_desenho_geomc3a9trico.pdf"
+                    target="_blank">PDF 1</a></li>
+            <li><a href="https://www.pimentacultural.com/wp-content/uploads/2024/04/eBook_Representacao-grafica.pdf"
+                    target="_blank">PDF 2</a></li>
+        </ul>
+    </div>
+
+    <!-- Seções para as janelas interativas -->
+    <section id="janela1" style="display:none;">
+        <h3>Paralela de uma reta</h3>
+        <iframe id="iframe1" src="https://www.geogebra.org/calculator/ptknjtu7?embed" width="100%" height="800px"
+            allowfullscreen style="border:0;"></iframe>
+        <button class="fullscreen-button" onclick="toggleFullScreen('iframe1')">Tela Cheia</button>
+    </section>
+
+    <section id="janela2" style="display:none;">
+        <h3>Triângulo Escaleno</h3>
+        <iframe id="iframe2" src="https://www.geogebra.org/calculator/xuh3rgzx?embed" width="100%" height="800px"
+            allowfullscreen style="border:0;"></iframe>
+        <button class="fullscreen-button" onclick="toggleFullScreen('iframe2')">Tela Cheia</button>
+    </section>
+
+    <section id="janela3" style="display:none;">
+        <h3>Quadrado</h3>
+        <iframe id="iframe3" src="https://www.geogebra.org/calculator/unxwcarj?embed" width="100%" height="800px"
+            allowfullscreen style="border:0;"></iframe>
+        <button class="fullscreen-button" onclick="toggleFullScreen('iframe3')">Tela Cheia</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pablo do Gebra. Todos os direitos reservados.</p>
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com/pablomateus98" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a href="mailto:pablo.mateus@ufpe.br" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    
+</body>
+
+</html>
