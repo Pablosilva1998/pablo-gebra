@@ -274,9 +274,13 @@ section h2 {
     justify-content: center;
 }
 
+.mobile-version img { 
+    width: 300px;
+}
+
 .mobile-version h1 {
     color: #3a3d98;
-    font-size: large;
+    font-size: 33px;
     margin-top: 70px;
     text-transform: uppercase;
 
