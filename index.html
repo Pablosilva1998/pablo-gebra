@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Geometria Interativa</title>
-    
+
     <!--folha de estilos-->
-    <link rel="stylesheet" href="styles/main.css"> 
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/nav.css">
 
     <!--codigo javascript-->
-    <script src="scripts/script.js"></script> 
+    <script src="scripts/script.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,12 @@
             <h1>Pablo do Gebra</h1>
             <h2>Explorando a Geometria de Forma Interativa com o GeoGebra </h2>
         </div>
+        <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
     </header>
+    <div class="mobile-version" >
+        <img src="/img/not-working-removebg-preview.png" alt="not working">
+        <h1>Sugerimos o uso no computador ... </h1>
+    </div>
 
     <!-- Botões Sobre Mim e Referências -->
     <div class="botoes-superiores">
@@ -32,52 +38,279 @@
     </div>
 
     <!-- Barra de Navegação Horizontal -->
-    <nav>
+    <nav id="sidebar">
+
         <ul>
-            <li><a href="#" onclick="showSection('janela1')">Paralela de uma Reta</a></li>
-            <li><a href="#" onclick="showSection('janela2')">Triângulo Escaleno</a></li>
-            <li><a href="#" onclick="showSection('janela3')">Quadrado</a></li>
+            <li>
+                <h3 class="sum">Sumário de Construções</h3>
+            </li>
+            <li><a href="#" onclick="showSection('janela1')">Triângulo</a></li>
+            <li><a href="#" onclick="showSection('janela2')">Quadrado</a></li>
+            <li><a href="#" onclick="showSection('janela3')">Pentágono </a></li>
+            <li><a href="#" onclick="showSection('janela4')">Hexágono</a></li>
+            <li><a href="#" onclick="showSection('janela5')">Heptágono</a></li>
+            <li><a href="#" onclick="showSection('janela6')">Octógono</a></li>
+            <li><a href="#" onclick="showSection('janela7')">Eneágono</a></li>
+            <li><a href="#" onclick="showSection('janela8')">Decágono</a></li>
+            <li><a href="#" onclick="showSection('janela9')">Pontos Notáveis do Triângulo</a></li>
         </ul>
     </nav>
-    <div id="about" style="display:none;">
-        <h3>Sobre Mim</h3>
-        <p>Olá! Meu nome é Pablo Mateus Souza da Silva, tenho 25 anos e sou discente do curso de Licenciatura em
-            Expressão Gráfica na Universidade Federal de Pernambuco (UFPE). Criei este site com o objetivo de
-            compartilhar algumas construções geométricas utilizando o GeoGebra, disponibilizando botões interativos que
-            criam um passo a passo, tornando mais fácil visualizar as regras de condição de existência das figuras.</p>
-    </div>
+    <main class="main">
+        <div id="about" style="display:none;">
+            <h2>Sobre Mim</h2>
+            <p>      Olá! Meu nome é Pablo Mateus Souza da Silva, tenho 25 anos e sou discente do curso de Licenciatura em
+                Expressão Gráfica na Universidade Federal de Pernambuco (UFPE). Criei este site com o objetivo de
+                compartilhar algumas construções geométricas utilizando o GeoGebra, disponibilizando botões interativos
+                que
+                criam um passo a passo, tornando mais fácil visualizar as regras de condição de existência das figuras.
+            </p>
+        </div>
 
-    <div id="references" style="display:none;">
-        <h3>Referências</h3>
-        <ul>
-            <li><a href="https://matematicaufsj.wordpress.com/wp-content/uploads/2012/12/caderno_desenho_geomc3a9trico.pdf"
-                    target="_blank">PDF 1</a></li>
-            <li><a href="https://www.pimentacultural.com/wp-content/uploads/2024/04/eBook_Representacao-grafica.pdf"
-                    target="_blank">PDF 2</a></li>
-        </ul>
-    </div>
+        <div id="references" style="display:none;">
+            <h2>Referências</h2>
+            <ul>
+                <li><a href="https://matematicaufsj.wordpress.com/wp-content/uploads/2012/12/caderno_desenho_geomc3a9trico.pdf"
+                        target="_blank"> Desenho Geométrico, Denize Piccolotto Carvalho Levy e Evandro de Morais Ramos -
+                        PDF 1</a></li>
+                <li><a href="https://www.pimentacultural.com/wp-content/uploads/2024/04/eBook_Representacao-grafica.pdf"
+                        target="_blank">Representação Gráfica para Engenharias, Arquitetura, Expressão Gráfica e Design
+                        - PDF 2</a></li>
+                <li><b>RIVEIRA, Félix O.; NEVES, Juarenze C.; GONÇALVES, Dinei N.</b>Traçados em desenho geométrico. Rio Grande: Editora da FURG, 1986.
+                </li>
+            </ul>
+        </div>
 
-    <!-- Seções para as janelas interativas -->
-    <section id="janela1" style="display:none;">
-        <h3>Paralela de uma reta</h3>
-        <iframe id="iframe1" src="https://www.geogebra.org/calculator/ptknjtu7?embed" width="100%" height="800px"
-            allowfullscreen style="border:0;"></iframe>
-        <button class="fullscreen-button" onclick="toggleFullScreen('iframe1')">Tela Cheia</button>
-    </section>
+        <!-- Seções para as janelas interativas -->
+        <section id="janela1">
+            <h2>Triângulo </h2>
+            <iframe id="iframe1" src="https://www.geogebra.org/calculator/kjw73bvq?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe1')">Tela Cheia</button>
 
-    <section id="janela2" style="display:none;">
-        <h3>Triângulo Escaleno</h3>
-        <iframe id="iframe2" src="https://www.geogebra.org/calculator/xuh3rgzx?embed" width="100%" height="800px"
-            allowfullscreen style="border:0;"></iframe>
-        <button class="fullscreen-button" onclick="toggleFullScreen('iframe2')">Tela Cheia</button>
-    </section>
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
 
-    <section id="janela3" style="display:none;">
-        <h3>Quadrado</h3>
-        <iframe id="iframe3" src="https://www.geogebra.org/calculator/unxwcarj?embed" width="100%" height="800px"
-            allowfullscreen style="border:0;"></iframe>
-        <button class="fullscreen-button" onclick="toggleFullScreen('iframe3')">Tela Cheia</button>
-    </section>
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/piramide-triangulo.jpg" alt="piramide" name="piramide">
+                        <label for="piramide">Pirâmide</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/telhado-triangulo.jpg" alt="telhado-triangulo" name="telhado-triangulo">
+                        <label for="telhado-triangulo">Telhado com formas triangulares</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/placas-de-transito-triangulo.jpg" alt="placas-de-transito-triangulo"
+                            name="placas-de-transito-triangulo">
+                        <label for="placas-de-transito-triangulo">Placas de trânsito triangulares</label>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="janela2" style="display:none;">
+            <h2>Quadrado</h2>
+            <iframe id="iframe2" src="https://www.geogebra.org/calculator/kshytrbq?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe2')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/xadrez-quadrado.jpg" alt="xadrez-quadrado" name="xadrez-quadrado">
+                        <label for="xadrez-quadrado">Tabuleiro de Xadrez</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/azulejo-quadrado.jpg" alt="azulejo-quadrado" name="azulejo-quadrado">
+                        <label for="azulejo-quadrado">Azulejo com formato quadrado</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/janelas-quadrado.jpg" alt="janelas-quadrado" name="janelas-quadrado">
+                        <label for="janelas-quadrado">Janelas quadradas</label>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section id="janela3" style="display:none;">
+            <h2>Pentágono</h2>
+            <iframe id="iframe3" src="https://www.geogebra.org/calculator/htphpvns?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe3')">Tela Cheia</button>
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/bola-pentagono.jpg" alt="bola-pentagono" name="bola-pentagono">
+                        <label for="bola-pentagono">Bola com costura pentagonal</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/edificios-pentagono.jpg" alt="edificios-pentagono" name="edificios-pentagono">
+                        <label for="edificios-pentagono">Edifício do Pentágono</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/insignia-pentagono.jpg" alt="insignia-pentagono" name="insignia-pentagono">
+                        <label for="insignia-pentagono">Insignia Militar</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela4" style="display:none;">
+            <h2>Hexágono</h2>
+            <iframe id="iframe4" src="https://www.geogebra.org/calculator/yvb3tbvk?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe4')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/favos-hexagono.jpg" alt="favos-hexagono" name="favos-hexagono">
+                        <label for="favos-hexagono">Favos de Mel</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/porcas-hexagono.jpg" alt="porcas-hexagono" name="porcas-hexagono">
+                        <label for="porcas-hexagono"></label>Porcas</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/ladrilho-hexagono.webp" alt="ladrilho-hexagono" name="ladrilho-hexagono">
+                        <label for="ladrilho-hexagono">Ladrinho com formato do hexágono</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela5" style="display:none;">
+            <h2>Heptágono</h2>
+            <iframe id="iframe5" src="https://www.geogebra.org/calculator/ckb4hsyv?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe5')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/espelho-heptagono.jpg" alt="espelho-heptagono" name="espelho-heptagono">
+                        <label for="espelho-heptagono">Espelho com formato heptagonal</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/moedas-heptagono.webp" alt="moedas-heptagono" name="moedas-heptagono">
+                        <label for="moedas-heptagono">Moedas com formato heptagonal</label>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela6" style="display:none;">
+            <h2>Octógono</h2>
+            <iframe id="iframe6" src="https://www.geogebra.org/calculator/rh6drfwq?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe6')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/pare-octogono.jpg" alt="pare-octogono" name="pare-octogono">
+                        <label for="pare-octogono"></label>Placa de Trânsito PARE</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/mesa-octogono.webp" alt="mesa-octogono" name="mesa-octogono">
+                        <label for="mesa-octogono">Mesa no formato octogonal</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/trampolim-octogono.jpg" alt="trampolim-octogono" name="trampolim-octogono">
+                        <label for="trampolim-octogono">Trampolim com formato octogonal</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela7" style="display:none;">
+            <h2>Eneágono</h2>
+            <iframe id="iframe7" src="https://www.geogebra.org/calculator/hmujewvq?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe7')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/moeda-eneagono.jpg" alt="moeda-eneagono" name="moeda-eneagono">
+                        <label for="moeda-eneagono">Moeda no formato eneagonal</label>
+                    </div>
+                    <div class="item">
+                        <img src="img/abajur-eneagono.jfif" alt="abajur-eneagono" name="abajur-eneagono">
+                        <label for="abajur-eneagono">Abajur gerado por IA gratuita do google "GEMINI" com base
+                            eneagonal</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela8" style="display:none;">
+            <h2>Decágono</h2>
+            <iframe id="iframe8" src="https://www.geogebra.org/calculator/mxahwfkn?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe8')">Tela Cheia</button>
+
+
+            <div class="main-carrossel">
+                <h2>Aplicações Práticas</h2>
+                <h3>Exemplos visuais de onde os polígonos aparecem em nosso dia a dia</h3>
+
+                <div class="carrossel">
+                    <div class="item">
+                        <img src="img/moeda-decagono.jpg" alt="moeda-decagono" name="moeda-decagono">
+                        <label for="moeda-decagono">Moeda com formato Decágono</label>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="janela9" style="display:none;">
+            <h2><i>Pontos Notáveis do Triângulo</i></h2>
+            <iframe id="iframe9" src="https://www.geogebra.org/calculator/p8d6fkwz?embed" width="100%" height="800px"
+                allowfullscreen style="border:0;"></iframe>
+            <button class="fullscreen-button" onclick="toggleFullScreen('iframe9')">Tela Cheia</button>
+        </section>
+
+    </main>
+
 
     <!-- Footer -->
     <footer>
@@ -92,7 +325,7 @@
     </footer>
 
 
-    
+
 </body>
 
 </html>

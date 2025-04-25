@@ -4,6 +4,13 @@ function showSection(sectionId) {
     document.getElementById('janela1').style.display = 'none';
     document.getElementById('janela2').style.display = 'none';
     document.getElementById('janela3').style.display = 'none';
+    document.getElementById('janela4').style.display = 'none';
+    document.getElementById('janela5').style.display = 'none';
+    document.getElementById('janela6').style.display = 'none';
+    document.getElementById('janela7').style.display = 'none';
+    document.getElementById('janela8').style.display = 'none';
+    document.getElementById('janela9').style.display = 'none';
+
 
     // Exibe a janela selecionada
     document.getElementById(sectionId).style.display = 'block';
@@ -66,3 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('about').style.display = 'none';
     document.getElementById('references').style.display = 'none';
 });
+
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('show-sidebar');
+  }
